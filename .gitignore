@@ -10,3 +10,6 @@ test_proxy.py
 .vscode
 .idea
 __pycache__
+proxy.conf
+.idea
+.venv

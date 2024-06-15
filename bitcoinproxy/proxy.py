@@ -4,7 +4,7 @@ import aiohttp
 import asyncio
 import time
 from aiohttp import web, BasicAuth
-from context import *
+from .context import *
 
 class BTCProxy:
 
@@ -48,9 +48,8 @@ class BTCProxy:
             return web.Response(text=responseText, content_type='application/json')
 
     async def forward_request(self, session, method, params):
-        destipadress = ctx.getConfigValue('net','dest_ip')
-        destportnumber = ctx.getConfigValue('net','dest_port')
-        url = f"http://{destipadress}:{destportnumber}"
+        desturl = ctx.getConfigValue('net','dest_url')
+        url = desturl
 
         async with session.post(url, json={"method": method, "params": params}) as response:
             data = await response.text()
@@ -121,6 +120,7 @@ class BTCProxy:
         await runner.setup()
         site = web.TCPSite(runner, ipadress, portnumber)
         await site.start()
+        print("hello world")
         LOG.info(f"Listening on {ipadress}:{portnumber}")
         await asyncio.Event().wait()  # Wait forever
 
