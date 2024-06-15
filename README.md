@@ -43,7 +43,7 @@ For connecting to the rpc with umbrel, its easiest to use cloudflare tunnels
 - make sure public rpc is enabled from bitcoin umbrel web ui
 - follow [this](https://github.com/Radiokot/umbrel-cloudflared/wiki/How-to-set-up-Cloudflare-Tunnel-on-your-Umbrel) for setting up cloudflare
 - In cloudflare public hostname page, put this
-  - ![img.png](img.png)
+  - ![img.png](images/img.png)
 - Then for `dest_url` you can just put your domain, for example `https://<domain>.<root>`
 
 
