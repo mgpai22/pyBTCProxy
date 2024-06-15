@@ -26,6 +26,29 @@ pyBTCProxy addresses this issue by serving as a proxy application. It functions 
 
 ## Installation
 
+### Docker
+
+```bash
+cp proxy-sample.conf proxy.conf
+```
+- Fill out the `dest_url` to be the url of your bitcoin rpc
+- Fill out `dest_user` and `dest_pass` corresponding to bitcoin rpc
+
+Run with 
+```bash
+docker compose up -d
+```
+
+For connecting to the rpc with umbrel, its easiest to use cloudflare tunnels
+- make sure public rpc is enabled from bitcoin umbrel web ui
+- follow [this](https://github.com/Radiokot/umbrel-cloudflared/wiki/How-to-set-up-Cloudflare-Tunnel-on-your-Umbrel) for setting up cloudflare
+- In cloudflare public hostname page, put this
+  - ![img.png](img.png)
+- Then for `dest_url` you can just put your domain, for example `https://<domain>.<root>`
+
+
+### Old Instructions
+
 It's just a script and a config file. You can clone the repository and utilize the provided sample configuration as follows:
 
 ```
