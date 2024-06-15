@@ -30,10 +30,9 @@ class BTCProxyContext:
             _conf['net']['listen_ip'] = '127.0.0.1'
         if not isinstance(_conf['net']['listen_port'], str):
             _conf['net']['listen_port'] = '8331'
-        if not isinstance(_conf['net']['dest_ip'], str):
-            _conf['net']['dest_ip'] = '127.0.0.1'
-        if not isinstance(_conf['net']['dest_port'], str):
-            _conf['net']['dest_port'] = '8332'
+        if not isinstance(_conf['net']['dest_url'], str):
+            print("You have to provide an RPC url")
+            exit
         if not isinstance(_conf['net']['dest_user'], str):
             print("You have to provide an RPC user in proxy.conf")
             exit

@@ -1,0 +1,9 @@
+version: '3'
+services:
+  bitcoin-proxy:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "8331:8331"
+    volumes:
+      - ./proxy.conf:/app/proxy.conf
